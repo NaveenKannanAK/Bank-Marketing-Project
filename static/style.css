@@ -1,0 +1,1196 @@
+
+/* =========================================
+   BANKPULSE - BANKING MARKETING INTELLIGENCE
+   Professional Navy & Teal Theme
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f7fc;
+    color: #10233f;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    min-height: 65px;
+    background: #061a30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    color: white;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand span,
+.footer-brand span {
+    color: #00d8c1;
+}
+
+.brand-icon {
+    color: #00dfcc;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #e3eaf2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+    transition: .25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00e2cc;
+    border-bottom: 2px solid #00dfc8;
+}
+
+.model-status {
+    border: 1px solid #00cbb8;
+    border-radius: 30px;
+    padding: 9px 17px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.model-status span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #19db71;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 390px;
+    background:
+        radial-gradient(
+            circle at 82% 40%,
+            rgba(0, 202, 190, .19),
+            transparent 35%
+        ),
+        linear-gradient(
+            110deg,
+            #071f38 0%,
+            #06394e 55%,
+            #006d78 100%
+        );
+
+    padding: 35px 7.2%;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Background glow */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(0, 225, 205, .10);
+    filter: blur(100px);
+    right: 10%;
+    top: -120px;
+    z-index: -1;
+}
+
+/* Hero text */
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #54b5bb;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 3.2vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #00e2c9;
+}
+
+.hero p {
+    max-width: 550px;
+    line-height: 1.75;
+    color: #e0edf5;
+    font-size: 15px;
+}
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 23px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00d9bc, #4af1d4);
+    color: #052b3b;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 217, 188, .2);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #06213a;
+}
+
+/* =========================================
+   HERO VISUAL - BANK IMAGE
+========================================= */
+
+.hero-visual {
+    flex: 1;
+    width: 48%;
+    max-width: 610px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    position: relative;
+    overflow: visible;
+    isolation: isolate;
+}
+
+/* Banking image */
+
+.bank-hero-image {
+    display: block;
+    width: 100%;
+    height: 235px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border: none;
+    border-radius: 0;
+
+    opacity: .95;
+    mix-blend-mode: screen;
+
+    filter: saturate(1.15) contrast(1.05);
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+}
+
+/* =========================================
+   CUSTOMER INSIGHTS PANEL
+========================================= */
+
+.hero-info {
+    width: 100%;
+    max-width: 430px;
+
+    background: rgba(3, 35, 55, .78);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(0, 217, 203, .65);
+    border-radius: 15px;
+
+    padding: 8px 20px;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+}
+
+.hero-info div {
+    padding: 12px 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    font-size: 13px;
+    color: #f1f8fc;
+}
+
+.hero-info div:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.main-container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 25px 6.5% 35px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 18px;
+}
+
+.heading-icon,
+.card-icon {
+    background: #d2faf5;
+    color: #008f89;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-icon {
+    width: 62px;
+    height: 55px;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: #53657c;
+}
+
+.model-badge {
+    margin-left: auto;
+    background: #b8f6f1;
+    color: #07545b;
+    padding: 14px 23px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   INPUT CARDS
+========================================= */
+
+.input-card {
+    background: rgba(255, 255, 255, .97);
+    border: 1px solid #dce8f1;
+    border-left: 4px solid #00baa8;
+    border-radius: 17px;
+
+    padding: 18px 20px;
+    margin-bottom: 12px;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 4px 13px rgba(22, 64, 94, .07);
+    transition: .25s;
+}
+
+.input-card:hover {
+    box-shadow: 0 7px 18px rgba(0, 100, 110, .12);
+    transform: translateY(-1px);
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon {
+    width: 57px;
+    height: 57px;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.card-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 12px;
+    color: #60738b;
+    line-height: 1.5;
+}
+
+/* Form fields */
+
+.fields {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px 17px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: #172c47;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    height: 39px;
+    padding: 0 11px;
+
+    border: 1px solid #cbd7e3;
+    border-radius: 7px;
+
+    background: #fff;
+    color: #20334a;
+
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: .2s;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #00bba9;
+    box-shadow: 0 0 0 3px rgba(0, 210, 190, .12);
+}
+
+.campaign-fields {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.economic-fields {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* =========================================
+   PREDICTION BUTTON
+========================================= */
+
+.submit-area {
+    text-align: center;
+    padding: 15px 0 5px;
+}
+
+.predict-button {
+    background: linear-gradient(90deg, #008d88, #006f73);
+    border: none;
+    border-radius: 30px;
+
+    padding: 16px 38px;
+    color: white;
+
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 15px;
+
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(0, 110, 110, .2);
+    transition: .25s;
+}
+
+.predict-button:hover {
+    background: #004f5b;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #071c32;
+    color: white;
+
+    min-height: 70px;
+    padding: 17px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+footer p,
+.footer-tech {
+    font-size: 11px;
+    color: #d3dfeb;
+}
+
+/* =========================================
+   RESULT PAGE
+========================================= */
+
+.result-container {
+    max-width: 750px;
+    margin: 55px auto;
+    padding: 35px;
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0, 40, 70, .1);
+    text-align: center;
+}
+
+.result-container h1 {
+    margin-bottom: 15px;
+    color: #0b2944;
+}
+
+.result-status {
+    font-size: 25px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.result-status.success {
+    color: #008c79;
+}
+
+.result-status.warning {
+    color: #bd7a16;
+}
+
+.probability {
+    font-size: 45px;
+    color: #008f89;
+    font-weight: 800;
+    margin: 20px;
+}
+
+.progress-track {
+    background: #e5edf3;
+    border-radius: 20px;
+    height: 13px;
+    overflow: hidden;
+    margin: 15px 0 25px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #00a89a, #43e4c7);
+    height: 100%;
+    border-radius: 20px;
+}
+
+.recommendation {
+    padding: 20px;
+    background: #e9f9f6;
+    border-radius: 12px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+
+    background: #007e7b;
+    color: white;
+
+    padding: 13px 25px;
+    border-radius: 25px;
+
+    text-decoration: none;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.back-button:hover {
+    background: #005e60;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.about-container h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 18px;
+    line-height: 1.8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN - TABLETS
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .input-card {
+        grid-template-columns: 1fr;
+    }
+
+    .fields,
+    .campaign-fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .economic-fields {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 25px;
+    }
+
+    .hero-content,
+    .hero-visual {
+        width: 50%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .model-status {
+        font-size: 10px;
+        padding: 7px 11px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 5%;
+        gap: 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .bank-hero-image {
+        height: 190px;
+    }
+
+    .hero-info {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .main-container {
+        padding: 20px 4%;
+    }
+
+    .section-heading {
+        flex-wrap: wrap;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+    .model-badge {
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .fields,
+    .campaign-fields,
+    .economic-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .input-card {
+        padding: 16px;
+    }
+
+    .card-info h3 {
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .result-container {
+        margin: 25px 4%;
+        padding: 22px;
+    }
+
+    .probability {
+        font-size: 38px;
+    }
+
+    .about-container {
+        margin: 25px auto;
+        padding: 18px;
+    }
+
+    .about-container h1 {
+        font-size: 26px;
+    }
+}
+
+
+/* ==========================================
+   BANKPULSE - FULL BANKING IMAGE HERO
+========================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 20, 38, 0.94) 0%,
+            rgba(3, 30, 48, 0.82) 45%,
+            rgba(0, 55, 65, 0.58) 100%
+        ),
+        url("images/bank-hero.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    padding: 65px 7%;
+}
+
+/* Keep all hero content above the background */
+.hero-content,
+.hero-visual {
+    position: relative;
+    z-index: 2;
+}
+
+/* Remove the separate image */
+.bank-hero-image {
+    display: none !important;
+}
+
+/* Improve text visibility */
+.hero-content h1,
+.hero-content p {
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Make the information panel match the background */
+.hero-info {
+    background: rgba(2, 24, 40, 0.78);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 170, 0.45);
+    border-radius: 20px;
+}
+
+/* Mobile display */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 55px 22px;
+        background-position: center;
+    }
+}
+
+
+/* ==========================================
+   BANKPULSE HERO - FINAL LAYOUT REFINEMENT
+========================================== */
+
+/* Reduce hero height and keep comfortable spacing */
+.hero {
+    min-height: 480px;
+    height: auto;
+    padding: 55px 7% 115px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Keep the main heading readable */
+.hero-content {
+    max-width: 650px;
+}
+
+/* Remove the separate visual container positioning */
+.hero-visual {
+    position: static;
+}
+
+/* Remove the information panel box */
+.hero-info {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    bottom: 28px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+
+    counter-reset: feature;
+}
+
+/* Four evenly aligned feature points */
+.hero-info > div {
+    counter-increment: feature;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 0;
+    padding: 15px 8px;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Numbered circular markers */
+.hero-info > div::before {
+    content: counter(feature);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #00d4aa;
+    border-radius: 50%;
+
+    color: #00d4aa;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* Remove original icons from feature labels */
+.hero-info > div {
+    font-size: 14px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 560px;
+        padding: 45px 22px 150px;
+    }
+
+    .hero-info {
+        left: 22px;
+        right: 22px;
+        bottom: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .hero-info > div {
+        justify-content: flex-start;
+        white-space: normal;
+        font-size: 12px;
+    }
+}
+
+
+/* ==========================================
+   FIX: ALIGN FOUR HERO FEATURE POINTS
+========================================== */
+
+.hero-info {
+    position: absolute !important;
+    left: 5% !important;
+    right: 5% !important;
+    bottom: 22px !important;
+
+    width: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: start !important;
+    justify-items: center !important;
+    gap: 12px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Each feature gets its own centered column */
+.hero-info > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 9px !important;
+
+    padding: 5px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.5 !important;
+
+    font-size: 13px !important;
+    color: #ffffff !important;
+}
+
+/* Numbered circles */
+.hero-info > div::before {
+    margin: 0 auto !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+    .hero-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        bottom: 15px !important;
+    }
+
+    .hero-info > div {
+        font-size: 12px !important;
+    }
+}
+
+
+/* ==========================================
+   MOVE FEATURE POINTS TO HERO BOTTOM-RIGHT
+========================================== */
+
+.hero-info {
+    position: absolute !important;
+
+    left: auto !important;
+    right: 7% !important;
+    bottom: 25px !important;
+
+    width: 420px !important;
+    max-width: 42% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 12px 20px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    justify-items: center !important;
+    align-items: center !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Individual feature points */
+.hero-info > div {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+    padding: 8px !important;
+
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+/* Number circles */
+.hero-info > div::before {
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 !important;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .hero {
+        padding-bottom: 190px !important;
+    }
+
+    .hero-info {
+        left: 6% !important;
+        right: 6% !important;
+        bottom: 18px !important;
+        width: auto !important;
+        max-width: none !important;
+        gap: 8px !important;
+    }
+
+    .hero-info > div {
+        font-size: 12px !important;
+    }
+}
+
+
+/* ==========================================
+   REMOVE NUMBER CIRCLES - KEEP FEATURE ICONS
+========================================== */
+
+.hero-info > div::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Align feature icons and labels */
+.hero-info > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    text-align: left !important;
+}
+
+/* Keep existing feature icons visible */
+.hero-info > div {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+
+/* ==========================================
+   PRECISE HERO FEATURE ALIGNMENT
+========================================== */
+
+.hero-info {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, auto) !important;
+
+    width: 420px !important;
+    max-width: 42% !important;
+
+    gap: 22px 20px !important;
+    align-items: center !important;
+    justify-items: stretch !important;
+}
+
+/* Consistent icon and label columns */
+.hero-info .hero-feature {
+    display: grid !important;
+    grid-template-columns: 24px minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-content: start !important;
+
+    width: 100% !important;
+    gap: 10px !important;
+
+    padding: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+}
+
+/* Feature icons */
+.hero-info .feature-icon {
+    width: 24px;
+    text-align: center;
+    color: #00d4aa;
+    font-size: 16px;
+}
+
+/* Feature labels */
+.hero-info .feature-label {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Remove old numbering */
+.hero-info .hero-feature::before {
+    display: none !important;
+    content: none !important;
+}

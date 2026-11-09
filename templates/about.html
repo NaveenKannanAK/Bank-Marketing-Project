@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BankPulse | About</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        .about-page {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 65px 25px 80px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .about-tag {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: rgba(0, 212, 170, 0.10);
+            color: #00a98a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .about-hero h1 span {
+            color: #00b894;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .about-overview {
+            padding: 32px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+            background: rgba(15, 35, 55, 0.75);
+            border: 1px solid rgba(0, 212, 170, 0.18);
+        }
+
+        .about-overview h2,
+        .about-card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .about-overview p,
+        .about-card p {
+            color: #94a3b8;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-bottom: 28px;
+        }
+
+        .about-card {
+            padding: 28px;
+            border-radius: 18px;
+            background: rgba(15, 35, 55, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            transition: transform 0.25s ease,
+                        border-color 0.25s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 170, 0.55);
+        }
+
+        .about-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: rgba(0, 212, 170, 0.12);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            margin: 8px 0;
+        }
+
+        .about-card strong {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .tech-section {
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(15, 35, 55, 0.75);
+            border: 1px solid rgba(0, 212, 170, 0.18);
+            margin-bottom: 35px;
+        }
+
+        .tech-section h2 {
+            color: #e2e8f0;
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-item {
+            padding: 11px 17px;
+            border-radius: 10px;
+            background: rgba(0, 212, 170, 0.09);
+            border: 1px solid rgba(0, 212, 170, 0.20);
+            color: #cbd5e1;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .about-actions {
+            text-align: center;
+        }
+
+        .about-actions a {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #00b894;
+            color: #062b2a;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .about-actions a:hover {
+            background: #00d4aa;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 700px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-page {
+                padding: 45px 18px 60px;
+            }
+
+            .about-overview,
+            .about-card,
+            .tech-section {
+                padding: 23px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+            ▦ Bank<span>Pulse</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="/">⌂ Home</a>
+            <a href="/about" class="active">ⓘ About</a>
+        </div>
+
+        <div class="model-status">
+            <span></span> ML Model Ready
+        </div>
+
+    </nav>
+
+
+    <!-- ABOUT PAGE -->
+
+    <main class="about-page">
+
+        <!-- HERO SECTION -->
+
+        <section class="about-hero">
+
+            <div class="about-tag">
+                ABOUT THE PROJECT
+            </div>
+
+            <h1>
+                Discover <span>BankPulse</span>
+            </h1>
+
+            <p>
+                Banking Marketing Intelligence & Customer Subscription
+                Prediction — using machine learning to support smarter,
+                data-driven marketing decisions.
+            </p>
+
+        </section>
+
+
+        <!-- PROJECT OVERVIEW -->
+
+        <section class="about-overview">
+
+            <h2>Project Overview</h2>
+
+            <p>
+                BankPulse is a machine learning application designed
+                to predict whether a bank customer is likely to subscribe
+                to a term deposit based on demographic, financial,
+                campaign and economic information.
+            </p>
+
+        </section>
+
+
+        <!-- INFORMATION CARDS -->
+
+        <section class="about-grid">
+
+            <!-- DATASET -->
+
+            <div class="about-card">
+
+                <div class="about-icon">📊</div>
+
+                <h2>Dataset Information</h2>
+
+                <p>
+                    <strong>Dataset:</strong>
+                    Portuguese Bank Marketing
+                </p>
+
+                <p>
+                    <strong>Records:</strong> 41,176
+                </p>
+
+                <p>
+                    <strong>Input Features:</strong>
+                    19 production features
+                </p>
+
+                <p>
+                    <strong>Target Variable:</strong> y
+                </p>
+
+            </div>
+
+
+            <!-- MACHINE LEARNING -->
+
+            <div class="about-card">
+
+                <div class="about-icon">🤖</div>
+
+                <h2>Machine Learning</h2>
+
+                <p>
+                    <strong>Selected Model:</strong>
+                    Random Forest Classifier
+                </p>
+
+                <p>
+                    <strong>Preprocessing:</strong>
+                    One-Hot Encoding
+                </p>
+
+                <p>
+                    <strong>Scaling:</strong>
+                    Standard Scaling
+                </p>
+
+                <p>
+                    <strong>Output:</strong>
+                    Subscription Yes / No
+                </p>
+
+            </div>
+
+
+            <!-- OBJECTIVE -->
+
+            <div class="about-card">
+
+                <div class="about-icon">🎯</div>
+
+                <h2>Project Objective</h2>
+
+                <p>
+                    Identify customers who are more likely to subscribe
+                    to a bank term deposit and help marketing teams
+                    make informed campaign decisions.
+                </p>
+
+            </div>
+
+
+            <!-- APPLICATION FEATURES -->
+
+            <div class="about-card">
+
+                <div class="about-icon">⚙️</div>
+
+                <h2>Application Features</h2>
+
+                <p>Customer information input form</p>
+
+                <p>Machine learning-based prediction</p>
+
+                <p>Subscription probability display</p>
+
+                <p>Prediction result and recommendation</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECHNOLOGIES -->
+
+        <section class="tech-section">
+
+            <h2>Technologies Used</h2>
+
+            <div class="tech-list">
+
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Pandas</span>
+                <span class="tech-item">NumPy</span>
+                <span class="tech-item">Scikit-learn</span>
+                <span class="tech-item">Random Forest</span>
+                <span class="tech-item">Flask</span>
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK TO HOME -->
+
+        <div class="about-actions">
+
+            <a href="/">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+            ▦ Bank<span>Pulse</span>
+        </div>
+
+        <p>Banking Marketing Intelligence</p>
+
+    </footer>
+
+</body>
+
+</html>

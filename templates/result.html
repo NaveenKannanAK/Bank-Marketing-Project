@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BankPulse | Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        .result-page {
+            min-height: calc(100vh - 130px);
+            padding: 45px 20px;
+            background:
+                radial-gradient(circle at 50% 0%, #d7f5f1, transparent 45%),
+                #f0f7fc;
+        }
+
+        .result-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 38px;
+            background: #ffffff;
+            border: 1px solid #dce8f1;
+            border-radius: 22px;
+            box-shadow: 0 15px 45px rgba(12, 48, 75, .10);
+            text-align: center;
+        }
+
+        .result-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #d2faf5;
+            color: #008f89;
+            border-radius: 20px;
+            font-size: 32px;
+        }
+
+        .result-eyebrow {
+            color: #008f89;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .result-container h1 {
+            color: #0b2944;
+            font-size: 27px;
+            margin-bottom: 9px;
+        }
+
+        .result-subtitle {
+            color: #60738b;
+            font-size: 13px;
+        }
+
+        .result-status {
+            display: inline-block;
+            margin: 25px 0 18px;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .result-status.success {
+            color: #007c6c;
+            background: #d9f8ed;
+            border: 1px solid #a6e9d2;
+        }
+
+        .result-status.warning {
+            color: #99600c;
+            background: #fff3d8;
+            border: 1px solid #f1d69c;
+        }
+
+        .probability-label {
+            color: #53657c;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .probability {
+            color: #008f89;
+            font-size: 52px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .progress-track {
+            height: 13px;
+            width: 100%;
+            background: #e5edf3;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 18px 0 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00a89a, #43e4c7);
+            border-radius: 20px;
+        }
+
+        .threshold-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #60738b;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        .recommendation {
+            background: #effaf8;
+            border: 1px solid #cceee7;
+            border-left: 4px solid #00baa8;
+            border-radius: 13px;
+            padding: 22px;
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        .recommendation h3 {
+            color: #07545b;
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+
+        .recommendation p {
+            color: #435a70;
+            font-size: 13px;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 13px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .result-actions a {
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .result-home {
+            color: white;
+            background: linear-gradient(90deg, #008d88, #006f73);
+        }
+
+        .result-about {
+            color: #006f73;
+            border: 1px solid #008d88;
+            background: white;
+        }
+
+        .result-actions a:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .result-container {
+                padding: 25px 18px;
+            }
+
+            .result-container h1 {
+                font-size: 22px;
+            }
+
+            .probability {
+                font-size: 43px;
+            }
+
+            .threshold-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+            ▦ Bank<span>Pulse</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="/">⌂ Home</a>
+            <a href="/about">ⓘ About</a>
+        </div>
+
+        <div class="model-status">
+            <span></span> ML Model Ready
+        </div>
+
+    </nav>
+
+
+    <!-- RESULT SECTION -->
+
+    <main class="result-page">
+
+        <div class="result-container">
+
+            <div class="result-icon">
+                📊
+            </div>
+
+            <div class="result-eyebrow">
+                BANKING MARKETING INTELLIGENCE
+            </div>
+
+            <h1>Customer Prediction Result</h1>
+
+            <p class="result-subtitle">
+                Random Forest Machine Learning Analysis
+            </p>
+
+
+            <!-- PREDICTION STATUS -->
+
+            <div class="result-status {{ status }}">
+                {{ result }}
+            </div>
+
+
+            <!-- PROBABILITY -->
+
+            <p class="probability-label">
+                Predicted Subscription Probability
+            </p>
+
+            <div class="probability">
+                {{ probability }}%
+            </div>
+
+
+            <!-- PROBABILITY BAR -->
+
+            <div class="progress-track">
+
+                <div class="progress-fill"
+                     style="width: {{ probability }}%;">
+                </div>
+
+            </div>
+
+
+            <!-- THRESHOLD -->
+
+            <div class="threshold-info">
+
+                <span>
+                    Classification Threshold: {{ threshold }}%
+                </span>
+
+                <span>
+                    Prediction: {{ "Yes" if status == "success" else "No" }}
+                </span>
+
+            </div>
+
+
+            <!-- RECOMMENDATION -->
+
+            <div class="recommendation">
+
+                <h3>💡 Marketing Recommendation</h3>
+
+                <p>{{ recommendation }}</p>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="result-actions">
+
+                <a href="/" class="result-home">
+                    ← New Prediction
+                </a>
+
+                <a href="/about" class="result-about">
+                    Project Overview
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+            ▦ Bank<span>Pulse</span>
+        </div>
+
+        <p>Banking Marketing Intelligence</p>
+
+        <div class="footer-tech">
+            Python • Scikit-learn • Flask
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
